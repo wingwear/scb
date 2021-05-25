@@ -51,7 +51,8 @@ jobs:
           command: |
                 . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo
       - run:
-          name: "UiPath Run Test"
+          name: "UiPath Run Job"
           shell: powershell.exe
           command: |
-            . 'C:\scripts\UiPathRunTest.ps1' "http://cloud.uipath.com" pocDefault -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -account_name pocsg -testset "ci_demo" -result_path "C:\workingdir\log\test_results1.json" -folder_organization_unit demo                
+                . 'C:\scripts\UiPathJobRun.ps1' -processName ci_demo -uriOrch https://cloud.uipath.com -tenantlName pocDefault -accountName pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo -result_path "C:\workingdir\Log\job.json"
+                Get-Content "C:\workingdir\Log\job.json";
