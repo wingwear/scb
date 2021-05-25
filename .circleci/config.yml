@@ -14,7 +14,7 @@ jobs:
           shell: powershell.exe
           command: |
                   New-Item -Path "C:\\" -ItemType "directory" -Name "uipathcli";
-                  Invoke-WebRequest "https://www.myget.org/F/uipath-dev/api/v2/package/UiPath.CLI/1.0.7808.22431" -OutFile "C:\\uipathcli\\cli.zip";
+                  Invoke-WebRequest "https://www.myget.org/F/uipath-dev/api/v2/package/UiPath.CLI/1.0.7802.11617" -OutFile "C:\\uipathcli\\cli.zip";
                   Expand-Archive -LiteralPath "C:\\uipathcli\\cli.Zip" -DestinationPath "C:\\uipathcli";
                   New-Item -Path "C:\\" -ItemType "directory" -Name "scripts";
                   Invoke-WebRequest "https://github.com/SE-Abdullah/UiPath-DevOps-Scripts/raw/main/scripts/UiPathPack.ps1"  -OutFile "C:\\scripts\\UiPathPack.ps1";
