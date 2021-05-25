@@ -1,20 +1,52 @@
 version: 2.1
-
 orbs:
   win: circleci/windows@2.2.0
-
 jobs:
   build:
+    working_directory: C:\workingdir\
     executor:
       name: win/default
+      shell: powershell.exe
     steps:
-      # default shell is Powershell
+      - checkout
       - run:
-         command: $(echo hello | Out-Host; $?) -and $(echo world | Out-Host; $?)
-         shell: powershell.exe
+          name: "Prepare Environment"
+          shell: powershell.exe
+          command: |
+                  New-Item -Path "C:\\" -ItemType "directory" -Name "uipathcli";
+                  Invoke-WebRequest "https://www.myget.org/F/uipath-dev/api/v2/package/UiPath.CLI/1.0.7808.22431" -OutFile "C:\\uipathcli\\cli.zip";
+                  Expand-Archive -LiteralPath "C:\\uipathcli\\cli.Zip" -DestinationPath "C:\\uipathcli";
+                  New-Item -Path "C:\\" -ItemType "directory" -Name "scripts";
+                  Invoke-WebRequest "https://github.com/SE-Abdullah/UiPath-DevOps-Scripts/raw/main/scripts/UiPathPack.ps1"  -OutFile "C:\\scripts\\UiPathPack.ps1";
+                  Invoke-WebRequest "https://github.com/SE-Abdullah/UiPath-DevOps-Scripts/raw/main/scripts/UiPathDeploy.ps1"  -OutFile "C:\\scripts\\UiPathDeploy.ps1";
+                  Invoke-WebRequest "https://github.com/SE-Abdullah/UiPath-DevOps-Scripts/raw/main/scripts/UiPathJobRun.ps1"  -OutFile "C:\\scripts\\UiPathJobRun.ps1";
+                  Invoke-WebRequest "https://github.com/SE-Abdullah/UiPath-DevOps-Scripts/raw/main/scripts/UiPathRunTest.ps1"  -OutFile "C:\\scripts\\UiPathRunTest.ps1";
       - run:
-         command: echo hello && echo world
-         shell: bash.exe
+          name: "UiPath Run Workflow Analyzer"
+          shell: powershell.exe
+          command: |
+                  New-Item -ItemType Directory -Force -Path "%LocalAppData%\UiPath\Rules";
+                  Copy-Item "C:\workingdir\Data\RuleConfig.json" "%LocalAppData%\UiPath\Rules\RuleConfig.json" -Force;
+                  . 'C:\uipathcli\lib\net461\uipcli.exe' package analyze "C:\workingdir\project.json" --analyzerTraceLevel "Error" --resultPath "C:\workingdir\Log\analyzer.json"
+                  Get-Content "C:\workingdir\Log\analyzer.json";
       - run:
-         command: echo hello & echo world
-         shell: cmd.exe
+          name: "UiPath Pack"
+          shell: powershell.exe
+          command: |
+                  New-Item -Path "C:\\workingdir\\" -ItemType "directory" -Name "output";
+                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion
+                  
+      - run:
+          name: "Deploy Artifactory"
+          shell: powershell.exe
+          command: |
+                  nuget sources Add -Name Artifactory -Source https://uipath2021sg.jfrog.io/artifactory/api/nuget/uipath_nuget;
+                  nuget setapikey demo:Uipath1234 -Source Artifactory
+                  $pkg_name = Get-ChildItem C:\workingdir\output\*.nupkg | Select-Object -ExpandProperty Name
+                  nuget push C:\workingdir\output\$pkg_name -Source Artifactory                  
+
+      - run:
+          name: "Deploy Project"
+          shell: powershell.exe
+          command: |
+                . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey mRYfVzez2lTPRbwAxkmGoOkR26otw83xsfGV9llRcyifp -folder_organization_unit demo
