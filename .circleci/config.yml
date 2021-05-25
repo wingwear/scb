@@ -25,9 +25,9 @@ jobs:
           name: "UiPath Run Workflow Analyzer"
           shell: powershell.exe
           command: |
-                  New-Item -ItemType Directory -Force -Path "%LocalAppData%\UiPath\Rules";
-                  Copy-Item "C:\workingdir\Data\RuleConfig.json" "%LocalAppData%\UiPath\Rules\RuleConfig.json" -Force;
-                  . 'C:\uipathcli\lib\net461\uipcli.exe' package analyze "C:\workingdir\project.json" --analyzerTraceLevel "Error" --resultPath "C:\workingdir\Log\analyzer.json"
+                  New-Item -ItemType Directory -Force -Path "$env:LOCALAPPDATA\UiPath\Rules";
+                  Copy-Item "C:\workingdir\Data\RuleConfig.json" "$env:LOCALAPPDATA\UiPath\Rules\RuleConfig.json" -Force;
+                  . 'C:\uipathcli\lib\net461\uipcli.exe' package analyze "C:\workingdir\project.json" --analyzerTraceLevel "Error" --resultPath "C:\workingdir\Log\analyzer.json" --ignoredRules "ST-USG-010,ST-ANA-009,ST-MRD-002,ST-NMG-001,ST-NMG-009,ST-USG-020,ST-MRD-011,ST-NMG-004,ST-ANA-003,ST-NMG-002"
                   Get-Content "C:\workingdir\Log\analyzer.json";
       - run:
           name: "UiPath Pack"
@@ -49,4 +49,4 @@ jobs:
           name: "Deploy Project"
           shell: powershell.exe
           command: |
-                . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey mRYfVzez2lTPRbwAxkmGoOkR26otw83xsfGV9llRcyifp -folder_organization_unit demo
+                . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo
