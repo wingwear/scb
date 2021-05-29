@@ -9,13 +9,6 @@ jobs:
       shell: powershell.exe
     steps:
       - checkout
-      - run: |
-              changes=`git show --name-only ${CIRCLE_SHA1} | tail -n +7`
-
-              if [ "$changes" = ".circleci/config.yml" ]; then 
-                echo "Only found a configuration change. Stopping build" 
-                circleci-agent step halt
-              fi
       - run:
           name: "Prepare Environment"
           shell: powershell.exe
@@ -36,6 +29,13 @@ jobs:
                   Copy-Item "C:\workingdir\Data\RuleConfig.json" "$env:LOCALAPPDATA\UiPath\Rules\RuleConfig.json" -Force;
                   . 'C:\uipathcli\lib\net461\uipcli.exe' package analyze "C:\workingdir\project.json" --analyzerTraceLevel "Error" --resultPath "C:\workingdir\Log\analyzer.json" --ignoredRules "ST-USG-010,ST-ANA-009,ST-MRD-002,ST-NMG-001,ST-NMG-009,ST-USG-020,ST-MRD-011,ST-NMG-004,ST-ANA-003,ST-NMG-002"
                   Get-Content "C:\workingdir\Log\analyzer.json";
+                  # Stop building if contains error
+                  $SEL = Select-String -Path C:\workingdir\Log\analyzer.json -Pattern "Error"
+                  if ($SEL -eq $null)
+                  {
+                      echo Error Detected in Workflow, Exit
+                      exit 1
+                  }
       - run:
           name: "UiPath Pack"
           shell: powershell.exe
