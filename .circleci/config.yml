@@ -9,6 +9,13 @@ jobs:
       shell: powershell.exe
     steps:
       - checkout
+      - run: |
+              changes=`git show --name-only ${CIRCLE_SHA1} | tail -n +7`
+
+              if [ "$changes" = ".circleci/config.yml" ]; then 
+                echo "Only found a configuration change. Stopping build" 
+                circleci-agent step halt
+              fi
       - run:
           name: "Prepare Environment"
           shell: powershell.exe
