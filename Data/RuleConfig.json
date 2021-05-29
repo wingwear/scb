@@ -5,7 +5,7 @@
       "RuleId": "ST-NMG-001",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Regex",
@@ -18,7 +18,7 @@
       "RuleId": "ST-NMG-008",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Length",
@@ -31,7 +31,7 @@
       "RuleId": "ST-NMG-009",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -41,13 +41,13 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-020",
       "IsEnabled": null,
       "DefaultIsEnabled": false,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Excluded",
@@ -60,7 +60,7 @@
       "RuleId": "ST-MRD-002",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -68,7 +68,7 @@
       "RuleId": "ST-USG-005",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "IncludeActivities",
@@ -93,7 +93,7 @@
       "RuleId": "ST-REL-006",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -127,13 +127,13 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "UI-PRR-001",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -141,7 +141,7 @@
       "RuleId": "UI-PRR-002",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -149,7 +149,7 @@
       "RuleId": "UI-PRR-003",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -157,7 +157,7 @@
       "RuleId": "UI-PRR-004",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -167,13 +167,13 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-021",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -188,13 +188,13 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "UI-SEC-004",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -202,7 +202,7 @@
       "RuleId": "UI-SEC-010",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "blacklistApps",
@@ -227,7 +227,7 @@
       "RuleId": "UI-USG-011",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "nonAllowedAttributes",
@@ -281,7 +281,7 @@
       "RuleId": "ST-NMG-004",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Threshold",
@@ -294,7 +294,7 @@
       "RuleId": "ST-NMG-005",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -302,7 +302,7 @@
       "RuleId": "ST-NMG-002",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "InRegex",
@@ -323,7 +323,7 @@
       "RuleId": "ST-NMG-011",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -331,7 +331,7 @@
       "RuleId": "ST-NMG-012",
       "IsEnabled": null,
       "DefaultIsEnabled": false,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -339,7 +339,7 @@
       "RuleId": "ST-NMG-006",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -347,7 +347,7 @@
       "RuleId": "ST-NMG-016",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Length",
@@ -367,7 +367,7 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-007",
@@ -380,13 +380,13 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-023",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -396,7 +396,7 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-028",
@@ -404,7 +404,7 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-024",
@@ -412,7 +412,7 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-DBP-026",
@@ -420,13 +420,13 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-MRD-007",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Threshold",
@@ -439,7 +439,7 @@
       "RuleId": "ST-MRD-004",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -447,7 +447,7 @@
       "RuleId": "ST-MRD-008",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -455,7 +455,7 @@
       "RuleId": "ST-MRD-005",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -463,7 +463,7 @@
       "RuleId": "ST-MRD-011",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -471,7 +471,7 @@
       "RuleId": "ST-MRD-009",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "Threshold",
@@ -484,7 +484,7 @@
       "RuleId": "ST-USG-009",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -492,7 +492,7 @@
       "RuleId": "ST-USG-026",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [
         {
           "Name": "ProhibitedActivities",
@@ -509,7 +509,7 @@
       "RuleId": "ST-PRR-004",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -519,7 +519,7 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-SEC-007",
@@ -527,7 +527,7 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-SEC-008",
@@ -540,7 +540,7 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-USG-024",
@@ -562,7 +562,7 @@
       "RuleId": "ST-USG-020",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -570,7 +570,7 @@
       "RuleId": "ST-DBP-027",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -652,13 +652,13 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-USG-010",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Warning",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -682,7 +682,7 @@
       "RuleId": "UI-ANA-017",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Info",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -690,7 +690,7 @@
       "RuleId": "UI-ANA-016",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Info",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -698,7 +698,7 @@
       "RuleId": "UI-ANA-018",
       "IsEnabled": false,
       "DefaultIsEnabled": true,
-      "DefaultErrorLevel": "Error",
+      "DefaultErrorLevel": "Info",
       "Parameters": [],
       "ErrorLevel": "Error"
     },
@@ -713,7 +713,7 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-USG-027",
@@ -726,7 +726,7 @@
           "Value": null
         }
       ],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-ANA-005",
@@ -734,15 +734,15 @@
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "ST-ANA-006",
-      "IsEnabled": null,
+      "IsEnabled": false,
       "DefaultIsEnabled": true,
       "DefaultErrorLevel": "Error",
       "Parameters": [],
-      "ErrorLevel": "Error"
+      "ErrorLevel": null
     },
     {
       "RuleId": "TA-DBP-003",
