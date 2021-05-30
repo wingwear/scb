@@ -33,8 +33,8 @@ jobs:
                   $SEL = Select-String -Path C:\workingdir\Log\analyzer.json -Pattern "Error"
                   if ($SEL -ne $null)
                   {
-                      echo Error Detected in Workflow, Exit
-                      exit 1
+                      echo "Error Detected in Workflow, Exit"
+                      #exit 1
                   }
       - run:
           name: "UiPath Pack"
