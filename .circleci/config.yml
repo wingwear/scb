@@ -37,12 +37,11 @@ jobs:
                       #exit 1
                   }
       - run:
-          name: "UiPath Pack"
+          name: "UiPath Pack Project"
           shell: powershell.exe
           command: |
                   New-Item -Path "C:\\workingdir\\" -ItemType "directory" -Name "output";
-                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion
-                  
+                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion               
       - run:
           name: "Deploy Artifactory"
           shell: powershell.exe
@@ -51,10 +50,14 @@ jobs:
                   nuget setapikey demo:Uipath1234 -Source Artifactory
                   $pkg_name = Get-ChildItem C:\workingdir\output\*.nupkg | Select-Object -ExpandProperty Name
                   nuget push C:\workingdir\output\$pkg_name -Source Artifactory            
-                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion -outputType Tests      
-
+                     
       - run:
-          name: "Deploy Project"
+          name: "UiPath Pack Test Scripts"
+          shell: powershell.exe
+          command: |
+                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion -outputType Tests                   
+      - run:
+          name: "Deploy Project and Test Scripts"
           shell: powershell.exe
           command: |
                 . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo
@@ -63,4 +66,4 @@ jobs:
           shell: powershell.exe
           command: |
                 . 'C:\uipathcli\lib\net461\uipcli.exe' test run http://cloud.uipath.com pocDefault -s ci_demo -a pocsg -t m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -o demo -r "C:\workingdir\Log\test.json"
-                Get-Content "C:\workingdir\Log\test.json";
+                Get-Content "C:\workingdir\Log\test.json | Convertfrom-json |convertto-json";
