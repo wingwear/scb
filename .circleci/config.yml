@@ -50,7 +50,8 @@ jobs:
                   nuget sources Add -Name Artifactory -Source https://uipath2021sg.jfrog.io/artifactory/api/nuget/uipath_nuget;
                   nuget setapikey demo:Uipath1234 -Source Artifactory
                   $pkg_name = Get-ChildItem C:\workingdir\output\*.nupkg | Select-Object -ExpandProperty Name
-                  nuget push C:\workingdir\output\$pkg_name -Source Artifactory                  
+                  nuget push C:\workingdir\output\$pkg_name -Source Artifactory            
+                  . 'C:\scripts\UiPathPack.ps1' "C:\workingdir\project.json" "C:\\workingdir\\output\\" -autoVersion -outputType Tests      
 
       - run:
           name: "Deploy Project"
@@ -58,8 +59,8 @@ jobs:
           command: |
                 . 'C:\scripts\UiPathDeploy.ps1' "C:\\workingdir\\output\\" "http://cloud.uipath.com" "pocDefault" -account_name pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo
       - run:
-          name: "UiPath Run Job"
+          name: "UiPath Run Test"
           shell: powershell.exe
           command: |
-                . 'C:\scripts\UiPathJobRun.ps1' -processName ci_demo -uriOrch https://cloud.uipath.com -tenantlName pocDefault -accountName pocsg -userKey m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -folder_organization_unit demo -result_path "C:\workingdir\Log\job.json"
-                Get-Content "C:\workingdir\Log\job.json";
+                . 'C:\uipathcli\lib\net461\uipcli.exe' test run http://cloud.uipath.com pocDefault -s ci_demo -a pocsg -t m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -o demo -r "C:\workingdir\Log\test.json"
+                Get-Content "C:\workingdir\Log\test.json";
