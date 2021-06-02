@@ -66,4 +66,4 @@ jobs:
           shell: powershell.exe
           command: |
                 . 'C:\uipathcli\lib\net461\uipcli.exe' test run http://cloud.uipath.com pocDefault -s ci_demo -a pocsg -t m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -o demo -r "C:\workingdir\Log\test.json"
-                Get-Content "C:\workingdir\Log\test.json | Convertfrom-json |convertto-json";
+                Get-Content "C:\workingdir\Log\test.json" | Convertfrom-json |convertto-json;
