@@ -86,7 +86,6 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
@@ -103,7 +102,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="C:\Users\wei.wang\Desktop\ww\project\Integration\CircleCI\demosg.rdp /f" DisplayName="Start Process" FileName="C:\Windows\System32\mstsc.exe" sap:VirtualizedContainerService.HintSize="754,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="C:\Users\wei.wang\Desktop\ww\project\Integration\CircleCI\Data\demosg.rdp /f" DisplayName="Start Process" FileName="C:\Windows\System32\mstsc.exe" sap:VirtualizedContainerService.HintSize="754,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
     <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe Incidents [S...'" sap:VirtualizedContainerService.HintSize="754,2738" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="0aab4fccfd6264327cf44092e890d0e4" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='demosg - demosg.eastasia.cloudapp.azure.com - Remote Desktop Con*' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -981,6 +980,9 @@
                                                       </Sequence>
                                                     </ActivityAction>
                                                   </p:CVScope.Body>
+                                                  <p:CVScope.DesignTimeCache>
+                                                    <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+                                                  </p:CVScope.DesignTimeCache>
                                                   <p:CVScope.DesignTimeCacheContainer>
                                                     <uc:CvCacheContainer>
                                                       <uc:CvCacheContainer.Caches>
@@ -1168,7 +1170,7 @@
                                                   <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                                                 </ActivityAction.Argument>
                                                 <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (577,159,319,36)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Number' (504,168,47,14)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="3aa557e3a33517066cbc1c5aae4c1fb1" RefreshBefore="True" Result="[case_no]" Version="V2">
+                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (577,159,319,36)&quot; +&#xA;&quot;Anchor: Text 'Number' (504,168,47,14)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="3aa557e3a33517066cbc1c5aae4c1fb1" RefreshBefore="True" Result="[case_no]" Version="V2">
                                                     <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                       <uc:CvDescriptor>
                                                         <uc:CvDescriptor.Anchors>
@@ -1182,7 +1184,7 @@
                                                       </uc:CvDescriptor>
                                                     </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                   </p:CvGetTextWithDescriptor>
-                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1373,160,291,33)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Opened' (1299,168,46,17)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Closed' (1305,208,39,14)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="97d4251cd6004197cf2be9fa3663b7fc" RefreshBefore="True" Result="[case_date]" Version="V2">
+                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1373,160,291,33)&quot; +&#xA;&quot;Anchor: Text 'Opened' (1299,168,46,17)&quot; +&#xA;&quot;Anchor: Text 'Closed' (1305,208,39,14)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="97d4251cd6004197cf2be9fa3663b7fc" RefreshBefore="True" Result="[case_date]" Version="V2">
                                                     <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                       <uc:CvDescriptor>
                                                         <uc:CvDescriptor.Anchors>
@@ -1197,7 +1199,7 @@
                                                       </uc:CvDescriptor>
                                                     </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                   </p:CvGetTextWithDescriptor>
-                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1371,239,320,35)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Urgency' (1298,249,47,15)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="f93eda6079cfb5d0300e98243621ecdc" RefreshBefore="True" Result="[case_urgency]" Version="V2">
+                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1371,239,320,35)&quot; +&#xA;&quot;Anchor: Text 'Urgency' (1298,249,47,15)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="f93eda6079cfb5d0300e98243621ecdc" RefreshBefore="True" Result="[case_urgency]" Version="V2">
                                                     <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                       <uc:CvDescriptor>
                                                         <uc:CvDescriptor.Anchors>
@@ -1211,7 +1213,7 @@
                                                       </uc:CvDescriptor>
                                                     </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                   </p:CvGetTextWithDescriptor>
-                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1374,279,317,35)&quot; +&#xD;&#xA;&quot;Anchor: Text 'State' (1314,289,31,13)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="72ddfaf69b56dd123b850b6995795550" RefreshBefore="True" Result="[case_state]" Version="V2">
+                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (1374,279,317,35)&quot; +&#xA;&quot;Anchor: Text 'State' (1314,289,31,13)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="72ddfaf69b56dd123b850b6995795550" RefreshBefore="True" Result="[case_state]" Version="V2">
                                                     <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                       <uc:CvDescriptor>
                                                         <uc:CvDescriptor.Anchors>
@@ -1225,7 +1227,7 @@
                                                       </uc:CvDescriptor>
                                                     </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                   </p:CvGetTextWithDescriptor>
-                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (579,319,815,34)&quot; +&#xD;&#xA;&quot;Anchor: Text 'State' (1314,289,31,13)&quot; +&#xD;&#xA;&quot;Anchor: Text '* Short description' (432,328,118,17)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="5e0f64efffe94df226ed09bec7356ed1" RefreshBefore="True" Result="[case_desc]" Version="V2">
+                                                  <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (579,319,815,34)&quot; +&#xA;&quot;Anchor: Text 'State' (1314,289,31,13)&quot; +&#xA;&quot;Anchor: Text '* Short description' (432,328,118,17)&quot;]" DesignTimeCacheId="8a513935-79d3-4aa9-99a3-52dece46743b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="5e0f64efffe94df226ed09bec7356ed1" RefreshBefore="True" Result="[case_desc]" Version="V2">
                                                     <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                                       <uc:CvDescriptor>
                                                         <uc:CvDescriptor.Anchors>
@@ -1243,6 +1245,9 @@
                                                 </Sequence>
                                               </ActivityAction>
                                             </p:CVScope.Body>
+                                            <p:CVScope.DesignTimeCache>
+                                              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+                                            </p:CVScope.DesignTimeCache>
                                             <p:CVScope.DesignTimeCacheContainer>
                                               <uc:CvCacheContainer>
                                                 <uc:CvCacheContainer.Caches>
@@ -1628,15 +1633,13 @@
                                         </Sequence>
                                       </ui:CommentOut.Body>
                                     </ui:CommentOut>
-                                    <ui:BuildDataTable DataTable="[dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Urgency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;State&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                                    <ui:BuildDataTable DataTable="[dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Urgency&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;State&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Description&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
                                     <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[(case_no + &quot;###&quot; + case_date + &quot;###&quot; + case_urgency + &quot;###&quot; + case_state + &quot;###&quot; + case_desc).Split(new string() {&quot;###&quot;}, StringSplitOptions.None)]" DataTable="[dt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                                     <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[dt]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[case_no + &quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="436,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
                                     <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="436,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;AML alert: case#&quot; + case_no]" To="[email_add]">
                                       <ui:SendOutlookMail.Files>
                                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                          <InArgument x:TypeArguments="x:String">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="case_no + &quot;.csv&quot;" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String">[case_no + ".csv"]</InArgument>
                                         </scg:List>
                                       </ui:SendOutlookMail.Files>
                                     </ui:SendOutlookMail>
