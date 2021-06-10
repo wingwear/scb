@@ -65,5 +65,7 @@ jobs:
           name: "UiPath Run Test"
           shell: powershell.exe
           command: |
-                . 'C:\uipathcli\lib\net461\uipcli.exe' test run http://cloud.uipath.com pocDefault -s ci_demo -a pocsg -t m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -o demo -r "C:\workingdir\Log\test.json"
-                Get-Content "C:\workingdir\Log\test.json" | Convertfrom-json |convertto-json;
+                . 'C:\uipathcli\lib\net461\uipcli.exe' test run http://cloud.uipath.com pocDefault -s ci_demo -a pocsg -t m8xqWh6rNTsCDeRaDG5KRC490IBmMrGlEwp8ANPIWtskF -o demo -r "C:\workingdir\Log\test.xml" --out junit
+                # Get-Content "C:\workingdir\Log\test.json" | Convertfrom-json |convertto-json;
+      - store_test_results:
+          path: "C:\\workingdir\\log"
